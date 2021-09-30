@@ -448,7 +448,7 @@ class Lucky_Rotation extends React.Component {
 				"token": user.Token,
 			}
 		}
-		axios.get('https://api.splay.vn/luckywheel/luckywheel/user-signout/', header).then(function (response) {
+		axios.get('http://171.244.14.215:8988/luckywheel/luckywheel/user-signout/', header).then(function (response) {
 			console.log(response)
 		})
 	}
