@@ -153,7 +153,7 @@ export const getLuckyInfo = () => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/event-info"
+		var url = Ultilities.base_url() + "event-info"
 		return axios.get(url).then(function (response) {
 			console.log(response)
 			dispatch({
@@ -173,7 +173,7 @@ export const getLuckyItems = () => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/awards"
+		var url = Ultilities.base_url() + "awards"
 		return axios.get(url).then(function (response) {
 			console.log(response)
 			dispatch({
@@ -199,7 +199,7 @@ export const getVinhDanh = (limit, offset) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/award-table/?limit=" + limit + "&offset=" + offset;
+		var url = Ultilities.base_url() + "award-table/?limit=" + limit + "&offset=" + offset;
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: LUCKY_VINH_DANH,
@@ -225,7 +225,7 @@ export const getInfoUser = (token) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/user-signin";
+		var url = Ultilities.base_url() + "user-signin";
 		return axios.get(url, header).then(function (response) {
 			console.log("response.data:",response.data)
 			dispatch({
@@ -252,7 +252,7 @@ export const getDataUserSpin = (token) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/user-spins";
+		var url = Ultilities.base_url() + "user-spins";
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: DATA_USER_SPIN,
@@ -274,7 +274,7 @@ export const userLogout = (token) => {
 			"token": token,
 		}
 	}
-	var url = Ultilities.base_url() + "luckywheel/user-signout";
+	var url = Ultilities.base_url() + "user-signout";
 	return axios.get(url, header).then(function (response) {
 		console.log(response)
 	}).catch(function (error) {
@@ -295,7 +295,7 @@ export const pickCard = (token) => {
 			type: LUCKY_REQUEST
 		})
 		// var url = Ultilities.base_url() + "/awardSpin?spinId=" + id + "&scoinToken=" + scoinToken;
-		var url = Ultilities.base_url() + "luckywheel/spin/?userToken=" + token;
+		var url = Ultilities.base_url() + "spin/?userToken=" + token;
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: LUCKY_PICK_RESPONSE,
@@ -320,7 +320,7 @@ export const getTuDo = (token, limit, offset) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/user-awards/?offset=" + offset + "&limit=" + limit;
+		var url = Ultilities.base_url() + "user-awards/?offset=" + offset + "&limit=" + limit;
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: LUCKY_TU_DO,
@@ -346,7 +346,7 @@ export const getHistoryTuDo = (token, limit, offset) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/user-spin-history/?offset=" + offset + "&limit=" + limit;
+		var url = Ultilities.base_url() + "user-spin-history/?offset=" + offset + "&limit=" + limit;
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: LUCKY_HISTORY_TU_DO,
@@ -371,7 +371,7 @@ export const getItemAward = (token, award_id) => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/user-get-award?award-id=" + award_id;
+		var url = Ultilities.base_url() + "user-get-award?award-id=" + award_id;
 		return axios.get(url, header).then(function (response) {
 			dispatch({
 				type: ITEM_AWARD,
@@ -391,7 +391,7 @@ export const getItemAwardSpecial = () => {
 		dispatch({
 			type: LUCKY_REQUEST
 		})
-		var url = Ultilities.base_url() + "luckywheel/special-award";
+		var url = Ultilities.base_url() + "special-award";
 		return axios.get(url).then(function (response) {
 			dispatch({
 				type: ITEM_AWARD_SPECIAL,

@@ -206,7 +206,6 @@ class Lucky_Rotation extends React.Component {
 
 		this.props.getItemAwardSpecial().then(()=>{
 			var data=this.props.dataItemAwardSpecial;
-			console.log('AAAAAAA', data)
 			if(data!==undefined){
 				if(data.Status===0){
 					this.setState({itemSpecial: data.Data})
@@ -448,7 +447,7 @@ class Lucky_Rotation extends React.Component {
 				"token": user.Token,
 			}
 		}
-		axios.get('http://171.244.14.215:8988/luckywheel/luckywheel/user-signout/', header).then(function (response) {
+		axios.get('http://171.244.14.215:8988/luckywheel/user-signout/', header).then(function (response) {
 			console.log(response)
 		})
 	}
