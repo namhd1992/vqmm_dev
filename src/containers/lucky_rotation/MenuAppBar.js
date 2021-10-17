@@ -93,9 +93,11 @@ class MenuAppBar extends React.Component {
 			var code = Ultilities.parse_query_string("code", window.location.href);
 			var fb_mess = Ultilities.parse_query_string("fbmessid", window.location.href);
 			var currentPath=localStorage.getItem("currentPath");
+			alert("code",code, "fb_mess", fb_mess)
+			
 			if (code != null) {
 				if (fb_mess === null) {
-					var url = Ultilities.base_url() + "luckywheel/user-signin/";
+					var url = Ultilities.base_url() + "user-signin/";
 					var header = {
 						headers: {
 							"Content-Type": "application/text",
@@ -103,7 +105,7 @@ class MenuAppBar extends React.Component {
 						}
 					}
 					axios.get(url, header).then(function (response) {
-						console.log(response)
+						console.log("AAAAAAAAAAAA:",response)
 						var user_save = response.data;
 						user_save.expired = new Date();
 						localStorage.setItem("user", JSON.stringify(user_save));
@@ -112,6 +114,7 @@ class MenuAppBar extends React.Component {
 						// _this.props.getData(user_save.access_token, user_save.scoinAccessToken).then(function () {
 						// 	window.location.replace(`${window.location.protocol}//${window.location.host}`);
 						// });
+						alert("AAAAAAAA")
 					}).catch(function (error) {
 						_this.props.setStatusServer();
 						localStorage.removeItem("user");
@@ -119,7 +122,7 @@ class MenuAppBar extends React.Component {
 						_this.setState({ auth: false });
 					})
 				} else {
-					var url = Ultilities.base_url() + "luckywheel/user-signin/";
+					var url = Ultilities.base_url() + "user-signin/";
 					var header = {
 						headers: {
 							"Content-Type": "application/text",

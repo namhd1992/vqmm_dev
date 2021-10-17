@@ -54,9 +54,9 @@ class Ultilities {
 
 	static base_url = () => {
 		//dev
-			// return "https://api.splay.vn/";
+			// return "https://api.splay.vn/luckywheel/";
 		//live
-			return "http://171.244.14.215:8988/";
+			return "http://171.244.14.215:8988/luckywheel/";
 	}
 
 	static splay_api_key = () => {
